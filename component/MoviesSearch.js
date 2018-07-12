@@ -110,13 +110,6 @@ const styles = StyleSheet.create({
         backgroundColor: "#fff",
         borderTopRightRadius: 10,
         borderBottomRightRadius: 10,
-        shadowColor: 'rgba(0, 0, 0, 0.24)',
-        shadowOffset: {
-            width: 0,
-            height: 3
-        },
-        shadowRadius: 3,
-        shadowOpacity: 0.8
     }
 });
 

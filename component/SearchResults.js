@@ -18,7 +18,7 @@ class SearchResults extends Component {
         }else if(loading){
             return(
                 <View style={styles.loader}>
-                    <ActivityIndicator size={50} color="#0000ff"/>
+                    <ActivityIndicator  color="#0000ff"/>
                 </View>
             )
         }else if(filterResult === undefined){
