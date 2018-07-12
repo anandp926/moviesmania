@@ -12,13 +12,19 @@ class SearchResults extends Component {
         if(flag === 1) {
             return(
                 <View style={styles.loader}>
-                    <Text style={{color:'red'}}>{msg}!</Text>
+                    <Text style={{color:'red', fontWeight:'bold',fontSize:17,}}>{msg}</Text>
                 </View>
             )
         }else if(loading){
             return(
                 <View style={styles.loader}>
                     <ActivityIndicator size={50} color="#0000ff"/>
+                </View>
+            )
+        }else if(filterResult === undefined){
+            return(
+                <View style={styles.undefinedView}>
+                    <Text style={{fontWeight:'bold', fontSize:20, color:"#888"}}>No data available!</Text>
                 </View>
             )
         }else{
@@ -55,7 +61,7 @@ const styles = StyleSheet.create({
         flexDirection:'row',
         flexWrap:'wrap',
         padding:10,
-        marginBottom:80
+        marginBottom:90
     },
     movieCard:{
         width:(sWidth-60)/2,
@@ -87,6 +93,19 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         alignItems:'center',
         marginTop:150
+    },
+    undefinedView:{
+        flex:1,
+        alignItems:'center',
+        justifyContent:'center',
+        marginTop:150
+    },
+    undefinedTextData:{
+        height:100,
+        width:200,
+        backgroundColor:"#fff",
+        alignItems:'center',
+        justifyContent:'center',
     }
 });
 

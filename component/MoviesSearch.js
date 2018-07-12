@@ -14,6 +14,7 @@ import { StyleSheet,
 } from 'react-native'
 import { search } from '../utils/Api'
 import SearchResults from './SearchResults'
+import {Ionicons } from '@expo/vector-icons'
 const sWidth = Dimensions.get('window').width;
 
 class MoviesSearch extends Component {
@@ -55,25 +56,30 @@ class MoviesSearch extends Component {
         return (
             <View>
                 <View style={{padding:10}}>
-                    <Text style={{color:'blue'}}>Search by movie title</Text>
+                    <Text style={{color:'#757575',fontWeight:'bold',}}>Search by movie title</Text>
                 </View>
                 <View style={styles.searchView}>
                     <TextInput style={styles.searchInput}
+                               placeholder="Search here..."
                                underlineColorAndroid="transparent"
                                value={this.state.movieName}
                                onChangeText={(name) => this.setState({movieName:name, buttonEnable:false})}
                     />
                     <TouchableOpacity style={styles.searchButton} disabled={buttonEnable} onPress={this.searchMovie}>
-                        <Text style={{fontWeight:'bold', fontSize:16}}>SEARCH</Text>
+                        <Ionicons
+                            name="ios-search-outline"
+                            size={23} color='#4BA5F9'
+                        />
                     </TouchableOpacity>
                 </View>
-                <SearchResults 
-                    filterResult={filterResult} 
-                    navigation={this.props.navigation} 
+                <SearchResults
+                    filterResult={filterResult}
+                    navigation={this.props.navigation}
                     loading={loading}
                     flag={flag}
                     msg={msg}
                 />
+                
             </View>
             
         );
