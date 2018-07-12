@@ -59,7 +59,7 @@ class MoviesSearch extends Component {
                 </View>
                 <View style={styles.searchView}>
                     <TextInput style={styles.searchInput}
-                               underlineColorAndroid="#757575"
+                               underlineColorAndroid="transparent"
                                value={this.state.movieName}
                                onChangeText={(name) => this.setState({movieName:name, buttonEnable:false})}
                     />
@@ -88,18 +88,22 @@ const styles = StyleSheet.create({
         flexDirection:'row'
     },
     searchInput:{
-        width:sWidth-120,
-        height:50
+        width:sWidth-90,
+        height:50,
+        backgroundColor:"#fff",
+        borderTopLeftRadius: 10,
+        borderBottomLeftRadius: 10,
+        paddingLeft:10,
+        paddingRight:10
     },
     searchButton:{
         height:50,
-        width:100,
+        width:70,
         alignItems:'center',
         justifyContent:'center',
         backgroundColor: "#fff",
-        borderRadius: 10,
-        borderWidth: 2,
-        borderColor: '#757575',
+        borderTopRightRadius: 10,
+        borderBottomRightRadius: 10,
         shadowColor: 'rgba(0, 0, 0, 0.24)',
         shadowOffset: {
             width: 0,
